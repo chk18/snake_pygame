@@ -32,13 +32,13 @@ gameDisplay = pygame.display.set_mode((display_width, display_height))
 pygame.display.set_caption('Slither')
 
 # Define the variable that will hold the apple that our snake is trying to eat
-icon = pygame.image.load('apple.jpg')
+icon = pygame.image.load('img/apple.jpg')
 pygame.display.set_icon(icon) #Size: 32x32
 
-img = pygame.image.load('snake_head.png')
-appleimg = pygame.image.load('apple.jpg')
-alive = pygame.image.load('alive.png')
-dead = pygame.image.load('dead.png')
+img = pygame.image.load('img/snake_head.png')
+appleimg = pygame.image.load('img/apple.jpg')
+alive = pygame.image.load('img/alive.png')
+dead = pygame.image.load('img/dead.png')
 
 
 # Define more variables
@@ -204,7 +204,7 @@ def gameLoop():
 #           LINES 203 - 214        #
 ####################################
 
-    
+
 
 ######################################
 #           END OF PART FOUR         #
