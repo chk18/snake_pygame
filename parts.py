@@ -30,7 +30,13 @@ def score(score):
 #              PART THREE          #
 #           LINES 155 - 178        #
 ####################################
-#   WELCOME SCREEN
+
+# Allows us to change and select text for a welcome screen
+
+    gameDisplay.fill(white)
+
+    gameDisplay.blit(alive, [260,0])
+
     gameDisplay.fill(white)
     message_to_screen("Welcome to Slither",
                       green,
@@ -68,6 +74,8 @@ def score(score):
                               red,
                               y_displace = -50,
                               size = "large")
+
+            gameDisplay.blit(dead, [280,20])
 
             message_to_screen("press C to play again or Q to quit",
                               black,
