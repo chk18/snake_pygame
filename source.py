@@ -16,6 +16,12 @@ import random
 # Initialized the pygame library
 pygame.init()
 
+####################################
+#                                  #
+#              PART ONE            #
+#           LINES 25 - 33          #
+####################################
+
 # Create variables that define our colors we will need for the game
 black = (0, 0, 0)
 white = (255, 255, 255)
@@ -26,6 +32,10 @@ green = (0, 180, 0)
 display_width = 800
 display_height = 600
 
+######################################
+#           END OF PART ONE          #
+######################################
+
 gameDisplay = pygame.display.set_mode((display_width, display_height))
 pygame.display.set_caption('Slither')
 
@@ -35,6 +45,9 @@ pygame.display.set_icon(icon) #Size: 32x32
 
 img = pygame.image.load('snake_head.png')
 appleimg = pygame.image.load('apple.jpg')
+alive = pygame.image.load('alive.png')
+dead = pygame.image.load('dead.png')
+
 
 # Define more variables
 clock = pygame.time.Clock()
@@ -83,13 +96,19 @@ def pause():
         clock.tick(5)
 
 
-# Adding the functionality to keep track of the score
+####################################
+#                                  #
+#              PART TWO            #
+#           LINES 105 - 115        #
+####################################
+
 def score(score):
-    text = smallfont.render("Score: " + str(score), True, black)
-    gameDisplay.blit(text, [0,0])
+    text = medfont.render("Score: " + str(score), True, black)
+    gameDisplay.blit(text, [10,10])
 
-
-
+######################################
+#           END OF PART TWO          #
+######################################
 
 def randAppleGen():
     randAppleX = round(random.randrange(0, display_width - AppleThickness))#/10.0)*10.0
@@ -118,34 +137,43 @@ def game_intro():
                     pygame.quit()
                     quit()
 
-
+####################################
+#                                  #
+#              PART THREE          #
+#           LINES 155 - 178        #
+####################################
 
         gameDisplay.fill(white)
-        message_to_screen("Welcome to Slither",
-                          green,
-                          -100,
-                          "large")
+
+        gameDisplay.blit(alive, [260,0])
+
+        message_to_screen("Welcome NEXTUP",
+                      green,
+                      -80,
+                      "large")
         message_to_screen("The objective of the game is to eat red apples",
-                          black,
-                          -30,
-                          "small")
+                      black,
+                      -30,
+                      "small")
         message_to_screen("The more apples you eat, the longer you get",
-                          black,
-                          10,
-                          "small")
+                      black,
+                      10,
+                      "small")
         message_to_screen("If you run into yourself or the edges, you lose!",
-                          black,
-                          50,
-                          "small")
+                      black,
+                      50,
+                      "small")
 
         message_to_screen("Press C to play, P to pause, or Q to quit.",
-                          black,
-                          180,
-                          "small")
+                      black,
+                      180,
+                      "small")
         pygame.display.update()
         clock.tick(15)
 
-
+######################################
+#           END OF PART THREE        #
+######################################
 
 def snake(block_size, snakeList):
 
@@ -205,6 +233,13 @@ def gameLoop():
 
     while not gameEXIT:
 
+
+####################################
+#                                  #
+#              PART FOUR           #
+#           LINES 203 - 214        #
+####################################
+
         while gameOver == True:
             gameDisplay.fill(white)
             message_to_screen("Game over",
@@ -212,11 +247,17 @@ def gameLoop():
                               y_displace = -50,
                               size = "large")
 
+            gameDisplay.blit(dead, [280,20])
+
             message_to_screen("press C to play again or Q to quit",
                               black,
                               50,
                               size = "medium")
             pygame.display.update()
+
+######################################
+#           END OF PART FOUR         #
+######################################
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
