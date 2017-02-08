@@ -1,6 +1,4 @@
 #
-#   Snake Game
-#
 #   With this activity you will learn some of the more complex parts of Python,
 #   as well as learn about game design and what it takes to program games.
 #
@@ -19,7 +17,6 @@ pygame.init()
 ####################################
 #                                  #
 #              PART ONE            #
-#           LINES 25 - 33          #
 ####################################
 
 # Create variables that define our colors we will need for the game
@@ -99,7 +96,6 @@ def pause():
 ####################################
 #                                  #
 #              PART TWO            #
-#           LINES 105 - 115        #
 ####################################
 
 def score(score):
@@ -140,7 +136,6 @@ def game_intro():
 ####################################
 #                                  #
 #              PART THREE          #
-#           LINES 155 - 178        #
 ####################################
 
         gameDisplay.fill(white)
